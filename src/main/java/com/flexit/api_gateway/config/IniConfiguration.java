@@ -13,5 +13,6 @@ public class IniConfiguration {
     @Bean
     public org.apache.commons.configuration.Configuration getIniConfig(@Autowired ApplicationArguments applicationArguments) throws ConfigurationException {
         return new PropertiesConfiguration(applicationArguments.getOptionValues("Dpath").getFirst());
+
     }
 }
