@@ -33,7 +33,6 @@ public class JwtValidationFilter implements GatewayFilterFactory<JwtValidationFi
             String username = claims.getSubject();
             String role = claims.get("role", String.class);
 
-            // 🟢 Dynamically mutate the request per request
             ServerHttpRequest mutatedRequest = exchange.getRequest().mutate()
                     .header("username", username)
                     .header("role", role)

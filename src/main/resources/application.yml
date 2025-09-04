@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: flexit-api-gateway
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      user-auth:
+        slidingWindowSize: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+      inventory-management:
+        slidingWindowSize: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s

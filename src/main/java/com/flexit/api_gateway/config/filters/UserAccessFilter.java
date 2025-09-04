@@ -22,8 +22,6 @@ public class UserAccessFilter implements GatewayFilterFactory<UserAccessFilter.C
         return ((exchange, chain) -> {
             String requester = exchange.getRequest().getHeaders().getFirst("username");
             String role = exchange.getRequest().getHeaders().getFirst("role");
-
-            String requestPath = exchange.getRequest().getPath().value();
             String queryUsername = exchange.getRequest().getQueryParams().getFirst("username");
 
             boolean isAdmin = StringLiteralConstants.ROLE_ADMIN.equalsIgnoreCase(role);
